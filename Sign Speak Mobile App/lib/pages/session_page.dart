@@ -113,8 +113,6 @@ class _SessionPageState extends State<SessionPage> {
                                     color: Colors.blue,
                                   ),
                                 )),
-                            // new container
-
                             Container(
                               transform:
                                   Matrix4.translationValues(0.0, -20.0, 0.0),
@@ -122,7 +120,7 @@ class _SessionPageState extends State<SessionPage> {
                                 onPressed: () {
                                  
                                   showMeetingCodeDialog(context,
-                                      widget.user, sessionCode); //Pass sessionCode here
+                                      widget.user, sessionCode); 
                                 },
                                 style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.blue,

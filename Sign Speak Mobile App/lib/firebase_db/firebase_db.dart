@@ -5,7 +5,7 @@ class FirestoreService {
 
   // Add a session code
   static Future<void> addSessionCode(String sessionCode, String key) async {
-    await _db.collection('session').doc(key).set({'sessionCode': sessionCode});
+    await _db.collection('sessions').doc(key).set({'sessionCode': sessionCode});
   }
 
   // Search for a session code

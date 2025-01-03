@@ -7,8 +7,11 @@ import 'package:sign_speak/pages/session_page.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -74,15 +77,14 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ), // Space for the avatar
-                    TextButton(
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const SessionPage(user: 'Deaf')));
+                                builder: (context) => const SessionPage(user: 'Deaf')));
                       },
-                      style: TextButton.styleFrom(
+                      style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.only(
                             left: 55, right: 55, top: 5, bottom: 5),
                         foregroundColor: Colors.blue,
@@ -105,9 +107,10 @@ class HomePage extends StatelessWidget {
               ), // Position the avatar above the container
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.white, 
                   shape: BoxShape.circle,
-                  border: Border.all(color: Colors.blue, width: 2.0),
+                  border: Border.all(
+                      color: Colors.blue, width: 2.0), 
                 ),
               ),
 
@@ -116,7 +119,6 @@ class HomePage extends StatelessWidget {
               Container(
                 height: 160,
                 width: 330,
-                // padding: const EdgeInsets.only(top: 40, bottom: 20),
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
@@ -149,8 +151,8 @@ class HomePage extends StatelessWidget {
                           fit: BoxFit.fill,
                         ),
                       ),
-                    ), // Space for the avatar
-                    TextButton(
+                    ), 
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -158,7 +160,7 @@ class HomePage extends StatelessWidget {
                                 builder: (context) =>
                                     LanguageSelectionPage(user: "Normal")));
                       },
-                      style: TextButton.styleFrom(
+                      style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.only(
                             left: 40, right: 40, top: 5, bottom: 5),
                         foregroundColor: Colors.blue,
@@ -178,15 +180,8 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              // Container(
-              //   decoration: BoxDecoration(
-              //     color: Colors.white,
-              //     shape: BoxShape.circle,
-              //     border: Border.all(
-              //         color: Colors.blue, width: 2.0),
-              //   ),
-              // ),
+              ), 
+              
             ],
           ),
         ),

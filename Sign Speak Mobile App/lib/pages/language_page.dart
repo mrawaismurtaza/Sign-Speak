@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_speak/pages/home_page.dart';
 import 'package:sign_speak/pages/session_page.dart';
 
-class LanguageSelectionPage extends StatefulWidget {
+class LanguageSelectionPage extends StatefulWidget { 
   final String user;
   LanguageSelectionPage({required this.user, super.key});
 
@@ -15,21 +15,21 @@ class LanguageSelectionPage extends StatefulWidget {
 class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
   String selectedLanguage = 'English';
 
+
   @override
   Widget build(BuildContext context) {
     double Height = MediaQuery.of(context).size.height;
     double Width = MediaQuery.of(context).size.width;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: IconButton(
-            onPressed: () {
-              Navigator.push(
+           onPressed: () {
+              
+              Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => HomePage()),
               );
             },
             icon: const Icon(Icons.home, size: 40, color: Colors.blue),
@@ -88,8 +88,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              SessionPage(user: widget.user)));
+                          builder: (context) => SessionPage(user: widget.user)));
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.only(
@@ -111,8 +110,8 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
             ],
           ),
         ),
-      ),
-    );
+      );
+    
   }
 }
 

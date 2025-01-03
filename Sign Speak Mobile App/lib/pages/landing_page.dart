@@ -1,5 +1,9 @@
+// ignore_for_file: camel_case_types, library_private_types_in_public_api, use_build_context_synchronously, non_constant_identifier_names, avoid_unnecessary_containers
+
 import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:sign_speak/pages/home_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -10,8 +14,13 @@ class LandingPage extends StatefulWidget {
 
 class _landingPage extends State<LandingPage> {
   Future<void> loadHomePage() async {
-    // await Future.delayed(const Duration(seconds: 30));
-    Navigator.pushNamed(context, '/');
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => HomePage(),
+      ),
+    );
   }
 
   @override
@@ -22,6 +31,7 @@ class _landingPage extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
+    double Width = MediaQuery.of(context).size.width;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -41,7 +51,7 @@ class _landingPage extends State<LandingPage> {
               // Using Positioned to control the image inside the Stack
               Positioned(
                 top: 100,
-                left: 50,
+                left: Width * 0.12,
                 child: Column(
                   children: [
                     Image.asset(
